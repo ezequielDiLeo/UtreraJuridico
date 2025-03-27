@@ -1,0 +1,52 @@
+.cont-princ{
+    width: 100%;
+    height: 80vh;
+    background: linear-gradient(20deg, rgb(0, 0, 0), rgba(0, 0, 0, 0.09)), url('../../../../public/abogacia.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.cont-general{
+	width: 100%;
+	height: 70%;
+	display: flex;
+	align-items: center;
+}
+
+.estudio{
+	padding-left: 5%;
+	color: white;
+	font-size: 50px;
+}
+
+.cont-info-abajo{
+	height: 30%;
+	width: 80vw;
+	display: flex;
+	color: white;
+	align-items: end;
+    margin-left: 4%;
+}
+
+.cont-1{
+    width: 25%;
+	margin-right: 100px;
+	border-top: 1px solid rgb(150, 120, 81);
+}
+.cont-2{
+    width: 20%;
+	margin-right: 100px;
+	border-top: 1px solid rgb(150, 120, 81);
+}
+
+.frase{
+	padding-top: 15px;
+	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	display: flex;
+}
+.fr{
+	padding-left: 15px;
+}

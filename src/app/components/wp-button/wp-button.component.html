@@ -1,0 +1,33 @@
+@if(!modalIsOpen){
+    <a (click)="openModal()" class="whatsapp-button button">
+        <div class="whatsapp-content">
+            <img src="whatsapp-icon.png" alt="WhatsApp" class="whatsapp-logo" />
+          </div>
+    </a>
+}
+
+  @if(modalIsOpen){
+    <div class="modal-overlay">
+        <div class="modal-body">
+            <div class="cont-encabezado-modal">
+                <img src="wpp-logo-escrito.png" alt="WhatsApp" class="wpp-logo" />
+                <div class="btn-danger"  (click)="closeModal()">
+                    <img src="cerrar.png" class="cerrar" />
+                </div>
+            </div>
+            <div class="cont-info-wpp">
+                <p>Hola!👋</p>
+                <p>Comunícate con nosotros!</p>
+            </div>
+            <div class="cont-btns">
+                <a href="https://wa.me/+5491133780444" target="_blank" class="btn btn-success chat-btn">
+                    <span class="content text">Abrir Chat</span>
+                    <img width="35" height="35" class="content icon" src="enviar.png" alt="sent"/>
+                  </a>
+                  
+            </div>
+              
+          </div>
+    </div>
+  }
+  
