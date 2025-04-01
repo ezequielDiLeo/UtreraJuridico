@@ -17,14 +17,22 @@ gsap.registerPlugin(ScrollTrigger)
 })
 export class HomeComponent implements AfterViewInit{
 
+  // VIEWCHILD
   @ViewChild('menu', {static: true}) menu!: ElementRef<HTMLDivElement>;
   @ViewChild('firstSection', {static: true}) firstSection!: ElementRef<HTMLDivElement>;
   @ViewChild('secondSection', {static: true}) secondSection!: ElementRef<HTMLDivElement>;
   @ViewChild('imageFirst', {static: true}) imageFirst!: ElementRef<HTMLImageElement>;
   @ViewChild('imageSecond', {static: true}) imageSecond!: ElementRef<HTMLImageElement>;
 
-  constructor(@Inject(PLATFORM_ID)  private platformId: object, @Inject(DOCUMENT) private document: Document ){
+  constructor(@Inject(PLATFORM_ID)  private platformId: object, @Inject(DOCUMENT) private document: Document){
   }
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo(0, 0); 
+    }
+  }
+
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
       this.initScrollAnimation(); 
@@ -32,45 +40,48 @@ export class HomeComponent implements AfterViewInit{
     }
   }
 
+  // INICIO ANIMACIÓN SCROLL
   initScrollAnimation(): void {
     gsap.to(this.imageFirst.nativeElement, {
       scrollTrigger: {
         trigger: this.imageFirst.nativeElement,
         scrub: true,
-        start: 'top+=200px center',
+        start: '60% center',
       } as ScrollTrigger.Vars,
       duration: 1.1,
       scale: 1.2,
-      height: 250,
-    })
+      height: 250
+    });
     gsap.to(this.imageSecond.nativeElement, {
       scrollTrigger: {
         trigger: this.imageSecond.nativeElement,
         scrub: true,
-        start: 'top+=200px center',
+        start: '60% center',
       },
       duration: 1.1,
       scale: 1.2,
-      height: 250,
-    })
+      height: 250
+    });
     gsap.to(this.document.querySelector('.heading-1'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.heading-1'),
         scrub: true,
-        start:'120% center',
+        start:'top 30%',
       },
       color: '#fff',
-      duration: 1.5,
-    })
+      duration: 3,
+      opacity: 0.2
+    });
     gsap.to(this.document.querySelector('.paragraph'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.paragraph'),
         scrub: true,
-        start:'120% center',
+        start:'top 30% ',
       },
       color: '#fff',
       duration: 1.5,
-    })
+      opacity: 0.2
+    });
     gsap.to(this.document.querySelector('.btn'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.btn'),
@@ -79,66 +90,61 @@ export class HomeComponent implements AfterViewInit{
       },
       color: '#fff',
       duration: 1.5,
-    })
+      opacity: 0.2
+    });
+
+    // SECOND INICIO DE ANIMACIÓN
     gsap.from(this.document.querySelector('#contract'), {
       scrollTrigger: {
         trigger: this.document.querySelector('#contract'),
         scrub: true,
         toggleClass: 'active',
-        start: 'top 190%',
+        start: 'center bottom',
       },
       duration: 1.5,
       y: 35,
       opacity: 0,
-    })
+    });
     gsap.from(this.document.querySelector('#about'), {
       scrollTrigger: {
         trigger: this.document.querySelector('#about'),
         scrub: true,
         toggleClass: 'active',
-        start: 'top 150%',
+        start: 'center bottom',
       },
       duration: 1.5,
-      y: 10,
+      y: 40,
       opacity: 0,
-    })
+    });
     gsap.from(this.document.querySelector('.box'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.box'),
         scrub: true,
         toggleClass: 'active',        
-        start: 'top 210%',
+        start: '-80% bottom',
       },
-      duration: 1,
+      duration: 1.5,
       width: 0,
       opacity: 0,
-    })
+    });
     gsap.from(this.document.querySelector('.info-1__visual img'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.info-1__visual img'),
         scrub: true,
         toggleClass: 'active',
-        start: 'top 300%',
+        start: '-100% bottom',
       },
-      duration: 1,
-      height: '0%', 
-      scale: 0,
+      duration: 1.5,
+      height: 0, 
+      scale: 1.3,
       opacity: 0,
-      onStart: () => {
-        gsap.to(this.document.querySelector('.info-1__visual img'), {
-          height: '100%',
-          scale: 1,
-          opacity: 1,
-          duration: 1,
-    });
-  }
     })
     gsap.from(this.document.querySelector('.quote'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.quote'),
         scrub: true,
         toggleClass: 'active',
-        start: 'top 200%',
+        start: '30% bottom',
       },
       duration: 1,
       opacity: 0,
@@ -148,15 +154,17 @@ export class HomeComponent implements AfterViewInit{
         trigger: this.document.querySelector('.heading-3'),
         scrub: 0.5,
         toggleClass: 'active',
-        start: 'top 290%',
+        start: '-350% bottom',
       },
-      duration: 0.5,
+      duration: 1.5,
       color: '#fff',
-      y: 10,
+      y: 40,
       opacity: 0,
     })
   }
 
+
+// DE DONDE INICIA
   initialAnimation(): void {
     gsap.from(this.menu.nativeElement.childNodes, {
       duration: 0.5,
@@ -171,10 +179,17 @@ export class HomeComponent implements AfterViewInit{
       y: -30,
       delay: 0.5,
     })
+    gsap.from(this.imageSecond.nativeElement, {
+      duration: 0.7,
+      opacity: 0,
+      y: -30,
+      delay: 0.6,
+    })
     gsap.from(this.document.querySelector('.heading-1'), {
       duration: 0.7,
       opacity: 0,
       y: -30,
+      stagger: 0.2,
       delay: 0.5,
     })
     gsap.from(this.document.querySelector('.paragraph'), {

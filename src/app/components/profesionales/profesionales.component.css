@@ -1,0 +1,143 @@
+html {
+    scroll-behavior:smooth;
+  }
+.cont-global{
+    width: 100%;
+    height: auto;
+    background-color: rgba(146, 146, 146, 0.3);
+}
+
+.cont-padding{
+    height: 100%;
+    padding: 50px;
+}
+
+.cont-princ{
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.658)), url(../../../../public/bg-foot.jpg);
+    background-position: top;
+    background-size: cover;
+    width: 100%;
+    height: 70vh;
+}
+
+.title{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.profesionales{
+    border-top: 2px solid rgb(60, 56, 30);
+    color: white;
+    font-size: 50px;
+    margin-left: 12%;
+    padding-right: 105px;
+}
+
+.cont-info {
+    width: 100%;
+    min-height: 350px;
+    display: flex;
+}
+
+.cont-titulo{
+    width: 20%;
+    height: auto;
+    padding-bottom: 50px;
+    font-size: 30px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    padding-right: 25px;
+}
+
+.cont-join {
+    display: flex;
+    vertical-align: middle;
+    padding-top: 21%;
+}
+
+.material-symbols-outlined {
+    padding: 25px;
+}
+.cont-info-p {
+    width: 80%;
+}
+
+.abog {
+    padding-bottom: 50px;
+}
+
+.info {
+    font-family: "Nunito Sans", sans-serif;
+    font-size: 18px;
+    color: black;
+    font-weight: 450;
+    font-optical-sizing: auto;
+}
+.mail {
+    font-weight: 700;
+    color: rgb(0, 0, 0);
+}
+.cont-p {
+    width: 100%;
+    font-size: 22px;
+    font-family: "Nunito Sans", sans-serif;
+    display: flex;
+}
+
+/* CONT IMAGENES */
+.cont-images {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cont-img {
+    width: 70%;
+    padding: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 100px;
+}
+.img-prof{
+    height: 350px;
+    display: flex;
+    opacity: 3;
+}
+
+.cont-span {
+    position: relative;
+    display: inline-block;
+    transition: all ease 1s;
+}
+.cont-span:hover {
+    transform: scale(1.1);
+}
+
+.hover-info {
+    bottom: 0;
+    position: absolute;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(to bottom,rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.907));
+    color: white;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.5s ease-in-out, visibility 0.3s ease-in-out;
+    font-size: 18px;
+    color: rgb(205, 200, 193);
+    font-family: "Nunito Sans", sans-serif;
+}
+
+.cont-span:hover .hover-info {
+    opacity: 1;
+    visibility: visible;
+}

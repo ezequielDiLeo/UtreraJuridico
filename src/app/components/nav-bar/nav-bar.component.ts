@@ -15,6 +15,7 @@ export class NavBarComponent implements OnInit {
 
   //VARIABLES
   data: any = HomeComponent;
+  isScrolled = false;
 
   ngOnInit(): void {
     if (isPlatformBrowser(this._platformId)) {
@@ -25,7 +26,7 @@ export class NavBarComponent implements OnInit {
   smallNavB() {
     window.addEventListener('scroll', function () {
       var header = document.querySelector("header");
-      header?.classList.toggle("abajo", window.scrollY > 0)
+      header?.classList.toggle("abajo", window.scrollY > 100)
     })
 
   }

@@ -1,12 +1,31 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject, ViewChild } from '@angular/core';
+import Swiper from 'swiper';
 
 @Component({
   selector: 'app-principal',
   imports: [CommonModule],
   templateUrl: './principal.component.html',
-  styleUrl: './principal.component.css'
+  styleUrl: './principal.component.css',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class PrincipalComponent {
 
+  @ViewChild('swiperContainer', { static: false }) swiperEl!: ElementRef;
+
+  ngOnInit(): void {
+    if (this.swiperEl) {
+      const swiperParams = {
+        slidesPerView: 1,
+        on: {
+          init() {
+            console.log('Swiper inicializado');
+          },
+        },
+      };
+
+      Object.assign(this.swiperEl.nativeElement, swiperParams);
+      this.swiperEl.nativeElement.initialize();
+    }
+  }
 }
