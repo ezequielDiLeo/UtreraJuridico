@@ -139,7 +139,6 @@
     transition: all ease 0.5s;
   }
   .whatsapp-button:hover {
-    /* transform: rotate(360deg); */
     transform: scale(1.1);
   }
   

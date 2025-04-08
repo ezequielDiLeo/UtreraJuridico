@@ -6,12 +6,13 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FooterComponent } from "../footer/footer.component";
 import { PrincipalComponent } from "../principal/principal.component";
+import { WpButtonComponent } from "../wp-button/wp-button.component";
 
 gsap.registerPlugin(ScrollTrigger)
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, RouterModule, NavBarComponent, FooterComponent, PrincipalComponent],
+  imports: [CommonModule, RouterModule, NavBarComponent, FooterComponent, PrincipalComponent, WpButtonComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -56,7 +57,7 @@ export class HomeComponent implements AfterViewInit{
       scrollTrigger: {
         trigger: this.imageSecond.nativeElement,
         scrub: true,
-        start: '60% center',
+        start: '50% center',
       },
       duration: 1.1,
       scale: 1.2,
@@ -103,7 +104,7 @@ export class HomeComponent implements AfterViewInit{
       },
       duration: 1.5,
       y: 35,
-      opacity: 0,
+      opacity: 0.3,
     });
     gsap.from(this.document.querySelector('#about'), {
       scrollTrigger: {
@@ -137,7 +138,7 @@ export class HomeComponent implements AfterViewInit{
       duration: 1.5,
       height: 0, 
       scale: 1.3,
-      opacity: 0,
+      opacity: 0.5,
     })
     gsap.from(this.document.querySelector('.quote'), {
       scrollTrigger: {

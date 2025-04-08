@@ -158,3 +158,90 @@ header.abajo .cont-search{
 header.abajo .utre {
   opacity: 1;
 }
+
+/* Hamburguesa dentro del header */
+.menu-hamburguesa {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+    padding-right: 20px;
+    padding-bottom: 2px;
+  }
+
+  .cont-menu-desp {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding-top: 20px;
+    font-size: 30px;
+  }
+  .cont-x {
+    display: flex;
+    width: 100%;
+    color: white;
+    justify-content: start;
+  }
+  .cont-x p {
+    padding: 20px 0 0 25px;
+    font-size: 25px;
+    font-family: "Nunito Sans", sans-serif;
+    cursor: pointer;
+  }
+  
+  
+  .menu-responsive {
+      display: none;
+      flex-direction: column;
+      background-color: black;
+      position: fixed;
+      right: 0;
+      width: 80%; 
+      height: 100%;
+      z-index: 1001;
+    }
+    
+    .menu-responsive.abierto {
+        display: flex;
+    }
+    
+    .menu-responsive ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        padding-top: 10px;
+    }
+    
+    .menu-responsive li {
+        padding: 15px;
+        font-size: 20px;
+        font-family: "Nunito Sans", sans-serif;
+    }
+    
+    .menu-responsive a {
+    color: white;
+    text-decoration: none;
+}
+
+  .fondo-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.747);
+      z-index: 1000;
+    }
+    
+    
+    @media screen and (max-width: 900px) {
+      .cont-pagination {
+        display: none;
+      }
+    
+      .menu-hamburguesa {
+        display: block;
+      }
+    }

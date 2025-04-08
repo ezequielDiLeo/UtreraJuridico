@@ -16,6 +16,7 @@ export class NavBarComponent implements OnInit {
   //VARIABLES
   data: any = HomeComponent;
   isScrolled = false;
+  menuAbierto = false;
 
   ngOnInit(): void {
     if (isPlatformBrowser(this._platformId)) {
@@ -28,7 +29,20 @@ export class NavBarComponent implements OnInit {
       var header = document.querySelector("header");
       header?.classList.toggle("abajo", window.scrollY > 100)
     })
-
   }
+
+toggleMenu() {
+  this.menuAbierto = !this.menuAbierto;
+  if (this.menuAbierto) {
+    document.body.style.overflow = 'hidden'; // bloquea scroll
+  } else {
+    document.body.style.overflow = 'auto';   // lo vuelve a habilitar
+  }
+}
+
+cerrarMenu() {
+  this.menuAbierto = false;
+  document.body.style.overflow = 'auto';
+}
 
 }

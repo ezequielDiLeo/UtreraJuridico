@@ -23,6 +23,22 @@
             </div>
 
         </div>
-
+        <div class="menu-hamburguesa" (click)="toggleMenu()">☰</div>
     </header>
+
+    <nav class="menu-responsive" [class.abierto]="menuAbierto">
+        <div class="cont-x">
+          <p *ngIf="menuAbierto" (click)="cerrarMenu()">x</p>
+        </div>
+        <div class="cont-menu-desp">
+          <p class="menu">Menú</p>
+        </div>
+        <ul>
+          <li><a routerLink="/profesionales" (click)="cerrarMenu()">Equipo</a></li>
+          <li><a routerLink="/nosotros" (click)="cerrarMenu()">Nosotros</a></li>
+          <li><a routerLink="/contacto" (click)="cerrarMenu()">Contacto</a></li>
+        </ul>
+      </nav>
+    
+      <div class="fondo-overlay" *ngIf="menuAbierto" (click)="cerrarMenu()"></div>
 </div>

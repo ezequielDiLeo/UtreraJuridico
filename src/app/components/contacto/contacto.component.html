@@ -1,1 +1,136 @@
-<p>contacto works!</p>
+<app-nav-bar></app-nav-bar>
+<div class="contenedor-principal">
+    <div class="cont-princ-fondo">
+        <div class="title">
+            <p class="contacto tracking-in-expand-forward-top">Contacto</p>
+        </div>
+    </div>
+
+    <div class="contenedor-flex">
+        <div class="contenedor-mapa">
+            <div class="cont-mapa">
+                <app-mapa></app-mapa>
+             </div>
+            <div class="cont-info">
+                <div class="cont-info-flex">
+                    <div class="cont-image-p">
+                        <div class="contenedor-icon-place">
+                            <img src="https://img.icons8.com/?size=100&id=3723&format=png&color=000000" alt="place">
+                            <p class="informacion">Oficina</p>
+                        </div>
+                        <p class="datos">Palermo</p>
+                        <p class="datos">Núñez</p>
+                    </div>
+                    <div class="cont-image-p">
+                        <div class="contenedor-icon-place">
+                            <img src="https://img.icons8.com/?size=100&id=1ukcuRC8rfC1&format=png&color=000000" alt="horarios">
+                            <p class="informacion">Horarios</p>
+                        </div>
+                        <p class="datos">Lúnes a Viernes de 9 a 18hs</p>
+                    </div>
+                    <div class="cont-image-p">
+                        <div class="contenedor-icon-place">
+                            <img src="https://img.icons8.com/?size=100&id=16712&format=png&color=000000" alt="teléfono">
+                            <p class="informacion">Tel.</p>
+                        </div>
+                        <p class="datos">(+54) 911-3378-0444</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cont-formulario">
+            <p class="form-hint">Deje su consulta y nos pondremos en contacto a la brevedad.</p>
+
+            <form class="formulario" [formGroup]="contactForm" (ngSubmit)="sendMessage()">
+                <div class="cont-inputs-1">
+                    <div class="contenedor-inputs">
+                        <input id="name" formControlName="name" type="text" placeholder="Nombre">
+                        <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
+                            <small style="color: red;">El nombre es requerido y debe tener al menos 3 caracteres.</small>
+                        </div>
+                    </div>
+                    
+                    <div class="contenedor-inputs">
+                        <input id="lastName" formControlName="lastName" type="text" placeholder="Apellido">
+                        <div style="display: flex; justify-content: center; align-items: center;" *ngIf="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched">
+                            <small style="color: red;">El apellido es requerido y debe tener al menos 3 caracteres.</small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cont-inputs-1">
+                    <div class="contenedor-inputs">
+                        <input id="email" formControlName="email" type="email" placeholder="Email">
+                        <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
+                            <small style="color: red;">Ingrese un email válido. Asegurese que cumpla los requisitos <span style="color: grey;">example: mail&#64;gmail.com</span> </small>
+                        </div>
+                    </div>
+                    <div class="contenedor-inputs">
+                        <ng-select
+                        [items]="countries"
+                        bindLabel="name"
+                        bindValue="code"
+                        formControlName="country"
+                        placeholder="Seleccioná un país"
+                        [searchable]="true"
+                        [clearable]="true"
+                        class="custom-select"
+                        >
+            
+                            <ng-template ng-option-tmp let-item="item" class="custom-option">
+                                <img [src]="item.flag" width="20" height="14" />
+                                {{ item.name }}
+                            </ng-template>
+            
+                            <ng-template ng-label-tmp let-item="item">
+                                <img [src]="item.flag" width="20" height="14" style="margin-right: 8px;" />
+                                {{ item.name }}
+                              </ng-template>
+            
+                        </ng-select>
+            
+                        <div *ngIf="contactForm.get('country')?.invalid && contactForm.get('country')?.touched">
+                        <small style="color: red;">El país es obligatorio.</small>
+                        </div>
+                    </div>        
+                </div>
+
+                <div class="input-container full-width">
+                    <input id="phone" formControlName="phone" type="text" placeholder="Teléfono" />
+                    <div *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched">
+                      <small style="color: red;">Ingrese un número válido.</small>
+                    </div>
+                </div>
+                
+                <div class="input-container full-width">
+                    <textarea id="message" formControlName="message" placeholder="Mensaje"></textarea>
+                    <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
+                      <small style="color: red;">El mensaje es requerido y no debe exceder los 500 caracteres.</small>
+                    </div>
+                </div>
+
+                <div class="cont-aceptar">
+                    <label class="switch">
+                      <input type="checkbox" id="aceptar" formControlName="aceptar" />
+                      <span class="slider"></span>
+                    </label>
+                    <span class="text-aceptar">
+                      Acepto los <a href="/terminos-y-condiciones" target="_blank">términos y condiciones</a>
+                    </span>
+                </div>
+                  
+                <div *ngIf="contactForm.get('aceptar')?.invalid && contactForm.get('aceptar')?.touched">
+                    <small style="color: red;">Debes aceptar los términos para continuar.</small>
+                </div>
+                <div class="contenedor-btn">
+                    <button class="btn" type="submit" [disabled]="contactForm.invalid">Enviar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+        
+    </div>
+    
+<app-footer></app-footer>

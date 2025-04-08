@@ -2,10 +2,11 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { FooterComponent } from "../footer/footer.component";
 import { NavBarComponent } from "../nav-bar/nav-bar.component";
+import { WpButtonComponent } from "../wp-button/wp-button.component";
 
 @Component({
   selector: 'app-profesionales',
-  imports: [CommonModule, FooterComponent, NavBarComponent],
+  imports: [CommonModule, FooterComponent, NavBarComponent, WpButtonComponent],
   templateUrl: './profesionales.component.html',
   styleUrl: './profesionales.component.css'
 })
