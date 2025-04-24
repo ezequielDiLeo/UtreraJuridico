@@ -16,10 +16,11 @@
                     <div class="cont-image-p">
                         <div class="contenedor-icon-place">
                             <img src="https://img.icons8.com/?size=100&id=3723&format=png&color=000000" alt="place">
-                            <p class="informacion">Oficina</p>
+                            <p class="informacion">Oficinas</p>
                         </div>
                         <p class="datos">Palermo</p>
                         <p class="datos">Núñez</p>
+                        <p class="datos">(Con cita previa)</p>
                     </div>
                     <div class="cont-image-p">
                         <div class="contenedor-icon-place">
@@ -51,7 +52,7 @@
                             <small style="color: red;">El nombre es requerido y debe tener al menos 3 caracteres.</small>
                         </div>
                     </div>
-                    
+
                     <div class="contenedor-inputs">
                         <input id="lastName" formControlName="lastName" type="text" placeholder="Apellido">
                         <div style="display: flex; justify-content: center; align-items: center;" *ngIf="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched">
@@ -71,30 +72,29 @@
                         <ng-select
                         [items]="countries"
                         bindLabel="name"
-                        bindValue="code"
                         formControlName="country"
                         placeholder="Seleccioná un país"
                         [searchable]="true"
                         [clearable]="true"
                         class="custom-select"
                         >
-            
+
                             <ng-template ng-option-tmp let-item="item" class="custom-option">
                                 <img [src]="item.flag" width="20" height="14" />
                                 {{ item.name }}
                             </ng-template>
-            
+
                             <ng-template ng-label-tmp let-item="item">
                                 <img [src]="item.flag" width="20" height="14" style="margin-right: 8px;" />
                                 {{ item.name }}
                               </ng-template>
-            
+
                         </ng-select>
-            
+
                         <div *ngIf="contactForm.get('country')?.invalid && contactForm.get('country')?.touched">
                         <small style="color: red;">El país es obligatorio.</small>
                         </div>
-                    </div>        
+                    </div>
                 </div>
 
                 <div class="input-container full-width">
@@ -103,7 +103,7 @@
                       <small style="color: red;">Ingrese un número válido.</small>
                     </div>
                 </div>
-                
+
                 <div class="input-container full-width">
                     <textarea id="message" formControlName="message" placeholder="Mensaje"></textarea>
                     <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched">
@@ -117,12 +117,12 @@
                       <span class="slider"></span>
                     </label>
                     <span class="text-aceptar">
-                      Acepto los <a href="/terminos-y-condiciones" target="_blank">términos y condiciones</a>
+                      Acepto los <a href="/avisoLegal">términos y condiciones</a>
                     </span>
                 </div>
-                  
+
                 <div *ngIf="contactForm.get('aceptar')?.invalid && contactForm.get('aceptar')?.touched">
-                    <small style="color: red;">Debes aceptar los términos para continuar.</small>
+                    <small style="color: red;">Debes aceptar los términos & condiciones para continuar.</small>
                 </div>
                 <div class="contenedor-btn">
                     <button class="btn" type="submit" [disabled]="contactForm.invalid">Enviar</button>
@@ -130,7 +130,9 @@
             </form>
         </div>
     </div>
-        
+
+    <caratula-foot></caratula-foot>
+
     </div>
-    
+
 <app-footer></app-footer>

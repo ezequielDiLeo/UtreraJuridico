@@ -7,10 +7,11 @@ import Swal from 'sweetalert2'
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CountryService } from '../../services/countryService';
 import { MapaComponent } from "../mapa/mapa.component";
+import { CaratulaFootComponent } from "../caratula-foot/caratula-foot.component";
 
 @Component({
   selector: 'app-contacto',
-  imports: [CommonModule, NavBarComponent, FormsModule, FooterComponent, ReactiveFormsModule, NgSelectModule, MapaComponent],
+  imports: [CommonModule, NavBarComponent, FormsModule, FooterComponent, ReactiveFormsModule, NgSelectModule, MapaComponent, CaratulaFootComponent],
   templateUrl: './contacto.component.html',
   styleUrl: './contacto.component.css'
 })
@@ -19,7 +20,7 @@ export class ContactoComponent implements OnInit {
   ngOnInit(): void {
     this.countries = this.countryService.getCountries();
   }
-  
+
 
   contactForm: FormGroup;
   countries: { code: string; name: string; flag: string }[] = [];
@@ -31,7 +32,7 @@ export class ContactoComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       message: ['', [Validators.required, Validators.maxLength(500), Validators.minLength(5)]],
       phone: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(15)]],
-      country: ['', [Validators.required]],
+      country: [null, [,Validators.required]],
       aceptar: [false, Validators.requiredTrue]
     });
 
@@ -52,7 +53,7 @@ export class ContactoComponent implements OnInit {
       formData.append("lastName", this.lastName.value);
       formData.append("email", this.email.value);
       formData.append("phone", this.phone.value);
-      formData.append("country", this.country.value);
+      formData.append("country", this.country.value.name);
       formData.append("message", this.message.value);
       formData.append("_template", "table");
       formData.append("_captcha", "false");
@@ -75,6 +76,6 @@ export class ContactoComponent implements OnInit {
         Swal.fire("Error", "No se pudo enviar el mensaje.", "error");
       });
     }
-  }  
+  }
 
 }

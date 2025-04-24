@@ -190,36 +190,38 @@ header.abajo .utre {
     font-family: "Nunito Sans", sans-serif;
     cursor: pointer;
   }
-  
-  
+
+
   .menu-responsive {
-      display: none;
+      display: flex;
       flex-direction: column;
       background-color: black;
       position: fixed;
       right: 0;
-      width: 80%; 
+      width: 80%;
       height: 100%;
       z-index: 1001;
+      transform: translateX(100%);
+      transition: transform 0.6s ease-in;
     }
-    
+
     .menu-responsive.abierto {
-        display: flex;
+        transform: translateX(0);
     }
-    
+
     .menu-responsive ul {
         list-style: none;
         padding: 0;
         margin: 0;
         padding-top: 10px;
     }
-    
+
     .menu-responsive li {
         padding: 15px;
         font-size: 20px;
         font-family: "Nunito Sans", sans-serif;
     }
-    
+
     .menu-responsive a {
     color: white;
     text-decoration: none;
@@ -234,13 +236,13 @@ header.abajo .utre {
       background: rgba(0, 0, 0, 0.747);
       z-index: 1000;
     }
-    
-    
+
+
     @media screen and (max-width: 900px) {
       .cont-pagination {
         display: none;
       }
-    
+
       .menu-hamburguesa {
         display: block;
       }

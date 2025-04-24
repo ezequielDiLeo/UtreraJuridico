@@ -1,13 +1,23 @@
-import { Component } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { NavBarComponent } from "../nav-bar/nav-bar.component";
 import { FooterComponent } from "../footer/footer.component";
+import { WpButtonComponent } from "../wp-button/wp-button.component";
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-ayuda',
-  imports: [NavBarComponent, FooterComponent],
+  imports: [NavBarComponent, FooterComponent, WpButtonComponent],
   templateUrl: './ayuda.component.html',
   styleUrl: './ayuda.component.css'
 })
-export class AyudaComponent {
+export class AyudaComponent implements OnInit{
+
+  constructor(@Inject(PLATFORM_ID) private platformId: Object) { }
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo(0, 0);
+    }
+  }
 
 }

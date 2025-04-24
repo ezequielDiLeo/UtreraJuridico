@@ -1,0 +1,120 @@
+/* CONTENIDO CARATULA */
+.cont-princ{
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.658)), url(../../../../public/bg-foot.jpg);
+  background-position: top;
+  background-size: cover;
+  width: 100%;
+  height: 70vh;
+}
+.title{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+.Responsabilidad{
+  border-top: 2px solid rgb(60, 56, 30);
+  color: white;
+  font-size: 50px;
+  font-weight: 400;
+  margin-left: 15%;
+  padding-right: 105px;
+}
+
+/* CONTENEDOR JUSTICIA */
+
+.cont-justicia {
+  width: 100%;
+  height: 100%;
+  padding: 50px 0;
+}
+.titulo-justicia {
+  font-size: 23px;
+  font-weight: 600;
+}
+
+
+/* CONTENEDOR WPP */
+.contenedor-general {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contenedor-rse {
+  padding: 2rem;
+  border-radius: 16px;
+  width: 90%;
+  margin: 0 auto;
+  padding-top: 60px;
+  font-family: "Nunito Sans", sans-serif;
+}
+
+.titulo-seccion {
+  font-size: 2rem;
+  color: #161616;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-style: italic;
+}
+
+.intro-rse {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+.items-rse {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 25px 0;
+}
+
+.item-rse p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.title {
+  font-size: 23px;
+  color: #112431de;
+  margin-bottom: 0.5rem;
+}
+
+
+.ayuda-contacto {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 70px;
+}
+.btn-ayuda {
+  display: inline-block;
+  background-color: #006d5b;
+  color: #fff;
+  padding: 12px 25px;
+  margin-top: 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.btn-ayuda:hover {
+  background-color: #004c3f;
+}
+
+
+/* blink title */
+.blinking-title {
+  animation: blink 1.5s infinite;
+  color: #000;
+}
+
+@keyframes blink {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.7; }
+  100% { opacity: 1; }
+}

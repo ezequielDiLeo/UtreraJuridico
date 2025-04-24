@@ -1,36 +1,44 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component } from '@angular/core';
-import * as L from 'leaflet';
-import 'leaflet.fullscreen/Control.FullScreen.js';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import {GoogleMap, MapAdvancedMarker} from '@angular/google-maps';
+import { LocationService } from '../../services/mapa';
+import { AppLocations } from '../../interface/Locations';
+
 
 @Component({
   selector: 'app-mapa',
-  imports: [CommonModule],
+  imports: [CommonModule, GoogleMap, MapAdvancedMarker],
   templateUrl: './mapa.component.html',
   styleUrl: './mapa.component.css'
 })
-export class MapaComponent implements AfterViewInit {
-  private map: L.Map | undefined;
+export class MapaComponent implements OnInit {
 
-  ngAfterViewInit(): void {
-    this.initMap();
+  // INJECTS
+  private _locationService = inject(LocationService)
+
+  //SIGNALS
+  locations = signal<AppLocations[]>([])
+
+  ngOnInit() {
+    this._locationService.getAllLocations().subscribe(data => {
+      this.locations.set(data);
+    });
   }
 
-  private initMap(): void {
-    const coordenadas:any = [-34.586400, -58.414132];
-    this.map = L.map('map', {
-      center: coordenadas,
-      zoom: 16
-    } as any);
+  center = signal<google.maps.LatLngLiteral>({lat: -34.586400, lng: -58.414132});
+  zoom = signal<number>(16);
+  display: google.maps.LatLngLiteral | undefined;
 
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(this.map);
-  
-    L.marker(coordenadas).addTo(this.map)
-      .bindPopup('Oficina Palermo')
-      .openPopup();
-
-      (L.control as any).fullscreen({
-        position: 'topleft'
-      }).addTo(this.map!);
+  moveMap(event: google.maps.MapMouseEvent) {
+    if (event.latLng) {
+      this.center.set(event.latLng.toJSON());
     }
+  }
+
+  move(event: google.maps.MapMouseEvent) {
+    if (event.latLng) {
+      this.center.set(event.latLng.toJSON());
+    }
+  }
+
 }
