@@ -1,7 +1,7 @@
 @if(!modalIsOpen){
     <a (click)="openModal()" class="whatsapp-button button">
         <div class="whatsapp-content">
-            <img src="whatsapp-icon.png" alt="WhatsApp" class="whatsapp-logo" />
+            <img src="whatsapp-icon.png" alt="WhatsApp" class="whatsapp-logo" loading="lazy"/>
           </div>
     </a>
 }
@@ -10,9 +10,9 @@
     <div class="modal-overlay">
         <div class="modal-body">
             <div class="cont-encabezado-modal">
-                <img src="wpp-logo-escrito.png" alt="WhatsApp" class="wpp-logo" />
+                <img src="wpp-logo-escrito.png" alt="WhatsApp" class="wpp-logo" loading="lazy"/>
                 <div class="btn-danger"  (click)="closeModal()">
-                    <img src="cerrar.png" class="cerrar" />
+                    <img src="cerrar.png" class="cerrar" loading="lazy"/>
                 </div>
             </div>
             <div class="cont-info-wpp">
@@ -22,7 +22,7 @@
             <div class="cont-btns">
                 <a href="https://wa.me/5491133780444?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank" class="btn btn-success chat-btn">
                     <span class="content text">Abrir Chat</span>
-                    <img width="35" height="35" class="content icon" src="enviar.png" alt="sent"/>
+                    <img width="35" height="35" class="content icon" src="enviar.png" alt="sent" loading="lazy"/>
                   </a>
 
             </div>
