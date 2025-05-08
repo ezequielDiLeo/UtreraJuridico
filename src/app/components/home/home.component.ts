@@ -30,13 +30,13 @@ export class HomeComponent implements AfterViewInit{
 
   ngOnInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      window.scrollTo(0, 0); 
+      window.scrollTo(0, 0);
     }
   }
 
   ngAfterViewInit(): void {
     if (isPlatformBrowser(this.platformId)) {
-      this.initScrollAnimation(); 
+      this.initScrollAnimation();
       this.initialAnimation();
     }
   }
@@ -121,7 +121,7 @@ export class HomeComponent implements AfterViewInit{
       scrollTrigger: {
         trigger: this.document.querySelector('.box'),
         scrub: true,
-        toggleClass: 'active',        
+        toggleClass: 'active',
         start: '-80% bottom',
       },
       duration: 1.5,
@@ -136,7 +136,7 @@ export class HomeComponent implements AfterViewInit{
         start: '-100% bottom',
       },
       duration: 1.5,
-      height: 0, 
+      height: 0,
       scale: 1.3,
       opacity: 0.5,
     })
@@ -162,6 +162,19 @@ export class HomeComponent implements AfterViewInit{
       y: 40,
       opacity: 0,
     })
+
+    if (window.innerWidth > 768) {
+      gsap.to(this.imageFirst.nativeElement, {
+        scrollTrigger: {
+          trigger: this.imageFirst.nativeElement,
+          scrub: true,
+          start: '60% center',
+        },
+        duration: 1.1,
+        scale: 1.2,
+        height: 250
+      });
+    }
   }
 
 

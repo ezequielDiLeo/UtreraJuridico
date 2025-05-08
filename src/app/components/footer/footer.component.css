@@ -266,7 +266,6 @@
 
   @media (max-width: 768px) {
     .footer-cu {
-      flex-direction: column;
       gap: 10px;
     }
 
@@ -304,7 +303,8 @@
     .footer-section-redes {
       flex-direction: column !important;
       align-items: center;
-      width: 100%;
+      width: 80%;
+      border-bottom: 2px solid rgb(80, 69, 43);
     }
 
     .d-flex.line {

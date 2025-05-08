@@ -110,3 +110,28 @@ html {
         transform:translateZ(0) translateY(0);
         opacity:1
     }}
+
+
+    @media screen and (max-width: 900px) {
+      .cont-padding {
+        padding: 0;
+        width: 100%;
+      }
+
+      .cont-info{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+      .court-v {
+        width: 250px;
+        padding-top: 50px;
+      }
+      .cont-p {
+        width: 90%;
+        padding: 0;
+      }
+
+    }

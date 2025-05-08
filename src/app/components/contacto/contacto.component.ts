@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { NavBarComponent } from "../nav-bar/nav-bar.component";
 import { FooterComponent } from "../footer/footer.component";
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
 import Swal from 'sweetalert2'
 import { NgSelectModule } from '@ng-select/ng-select';
 import { CountryService } from '../../services/countryService';
@@ -17,15 +17,11 @@ import { CaratulaFootComponent } from "../caratula-foot/caratula-foot.component"
 })
 export class ContactoComponent implements OnInit {
 
-  ngOnInit(): void {
-    this.countries = this.countryService.getCountries();
-  }
-
-
+  // FORM DATA
   contactForm: FormGroup;
   countries: { code: string; name: string; flag: string }[] = [];
 
-  constructor(private fb: FormBuilder, private countryService: CountryService) {
+  constructor(private fb: FormBuilder, private countryService: CountryService, @Inject(PLATFORM_ID) private platformId: Object) {
     this.contactForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       lastName: ['', [Validators.required, Validators.minLength(3)]],
@@ -36,6 +32,13 @@ export class ContactoComponent implements OnInit {
       aceptar: [false, Validators.requiredTrue]
     });
 
+    this.countries = this.countryService.getCountries();
+  }
+
+  ngOnInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      window.scrollTo(0, 0);
+    }
     this.countries = this.countryService.getCountries();
   }
 

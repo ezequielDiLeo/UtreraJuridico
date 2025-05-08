@@ -3,10 +3,11 @@ import { NavBarComponent } from "../nav-bar/nav-bar.component";
 import { FooterComponent } from "../footer/footer.component";
 import { WpButtonComponent } from "../wp-button/wp-button.component";
 import { isPlatformBrowser } from '@angular/common';
+import { CaratulaFootComponent } from "../caratula-foot/caratula-foot.component";
 
 @Component({
   selector: 'app-ayuda',
-  imports: [NavBarComponent, FooterComponent, WpButtonComponent],
+  imports: [NavBarComponent, FooterComponent, WpButtonComponent, CaratulaFootComponent],
   templateUrl: './ayuda.component.html',
   styleUrl: './ayuda.component.css'
 })

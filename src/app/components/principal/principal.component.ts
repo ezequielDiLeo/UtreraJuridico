@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject, ViewChild } from '@angular/core';
-import Swiper from 'swiper';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-principal',

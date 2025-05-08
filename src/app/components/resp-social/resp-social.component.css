@@ -118,3 +118,18 @@
   50%  { opacity: 0.7; }
   100% { opacity: 1; }
 }
+
+
+@media screen and (max-width: 950px) {
+.Responsabilidad{
+  font-size: 40px;
+  margin-left: 15%;
+  padding-right: 0;
+}
+
+.contenedor-rse {
+  width: 90%;
+  padding: 0;
+  padding: 2rem 0 2rem 0;
+}
+}

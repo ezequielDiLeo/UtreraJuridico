@@ -206,4 +206,9 @@ html {
         height: 40%;
         margin-top: 25px;
     }
+
+    .profesionales {
+      padding-right: 0;
+      font-size: 45px;
+    }
 }
