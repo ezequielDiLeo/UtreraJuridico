@@ -1,7 +1,7 @@
 import { Component, inject, OnInit, PLATFORM_ID } from '@angular/core';
 import { HomeComponent } from '../home/home.component';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav-bar',
@@ -12,6 +12,7 @@ import { RouterModule } from '@angular/router';
 export class NavBarComponent implements OnInit {
   //INJECTIONS
   private _platformId = inject(PLATFORM_ID);
+  private router = inject(Router);
 
   //VARIABLES
   data: any = HomeComponent;
@@ -31,18 +32,22 @@ export class NavBarComponent implements OnInit {
     })
   }
 
-toggleMenu() {
-  this.menuAbierto = !this.menuAbierto;
-  if (this.menuAbierto) {
-    document.body.style.overflow = 'hidden'; // bloquea scroll
-  } else {
-    document.body.style.overflow = 'auto';   // lo vuelve a habilitar
+  toggleMenu() {
+    this.menuAbierto = !this.menuAbierto;
+    if (this.menuAbierto) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
   }
-}
 
-cerrarMenu() {
-  this.menuAbierto = false;
-  document.body.style.overflow = 'auto';
-}
+  cerrarMenu() {
+    this.menuAbierto = false;
+    document.body.style.overflow = 'auto';
+  }
+
+  noHome() {
+    return this.router.url !== '/home';
+  }
 
 }

@@ -10,6 +10,11 @@
         <div class="cont-pagination">
             <div class="cont-items">
                 <ul class="cont-ul">
+                    @if (noHome()) {
+                      <a routerLink="/home" routerLinkActive="active">
+                        <li class="lista">Inicio</li>
+                      </a>
+                    }
                     <a routerLink="/profesionales" routerLinkActive="active">
                         <li class="lista">Equipo</li>
                     </a>
@@ -30,11 +35,14 @@
         <div class="cont-x">
           <p (click)="cerrarMenu()">x</p>
         </div>
+
         <div class="cont-menu-desp">
           <img class="img-cont-menu-resp" src="simbolo-wb.png" alt="simboloWB">
           <p class="estudio-sp">Estudio Juridico <br> <span style="font-size: 15px;">Utrera & Asoc.</span></p>
         </div>
+
         <ul>
+          @if(noHome()){ <li><a routerLink="/home" (click)="cerrarMenu()">Inicio</a></li> }
           <li><a routerLink="/profesionales" (click)="cerrarMenu()">Equipo</a></li>
           <li><a routerLink="/nosotros" (click)="cerrarMenu()">Nosotros</a></li>
           <li><a routerLink="/contacto" (click)="cerrarMenu()">Contacto</a></li>

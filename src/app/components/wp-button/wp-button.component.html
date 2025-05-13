@@ -7,8 +7,8 @@
 }
 
   @if(modalIsOpen){
-    <div class="modal-overlay">
-        <div class="modal-body">
+    <div class="modal-overlay" [ngClass]="{'open': modalIsOpen}">
+        <div class="modal-body" [ngClass]="{'open': modalIsOpen}">
             <div class="cont-encabezado-modal">
                 <img src="wpp-logo-escrito.png" alt="WhatsApp" class="wpp-logo" loading="lazy"/>
                 <div class="btn-danger"  (click)="closeModal()">

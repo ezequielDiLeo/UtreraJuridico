@@ -209,7 +209,7 @@ p.paragraph{
     padding: 2rem 1rem;
     width: 100%;
     box-sizing: border-box;
-    min-height: 100vh;
+    min-height: 100dvh;
   }
 
   .info {
@@ -308,11 +308,13 @@ p.paragraph{
     box-sizing: border-box;
     display: block;
     z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .info-1__visual img {
-    width: 100%;
-    height: auto;
+    width: 95%;
     object-fit: cover;
     display: block;
   }
