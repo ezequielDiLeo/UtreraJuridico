@@ -247,7 +247,7 @@ export class HomeComponent implements AfterViewInit{
     },
     {
       title: 'Derecho Laboral',
-      description: 'Defendemos tus derechos como trabajador frente a despidos injustificados, reclamos salariales y condiciones laborales irregulares.',
+      description: 'Defendemos tus derechos como trabajador frente a despidos injustificados y justificados, reclamos salariales y condiciones laborales irregulares.',
       image: 'laboral.jpeg'
     },
     {
@@ -273,6 +273,11 @@ export class HomeComponent implements AfterViewInit{
     {
       title: 'Sucesiones',
       description: 'Acompañamos el proceso sucesorio con sensibilidad y eficiencia para asegurar el cumplimiento de tu legítima herencia.',
+      image: 'sucecion.jpg'
+    },
+    {
+      title: 'Derecho de Familia',
+      description: 'Acompañamos en procesos familiares, priorizando el diálogo y la protección de los vínculos. ALIMENTOS, DERECHO DE COMUNICACIÓN (régimen de visitas), responsabilidad parental.',
       image: 'sucecion.jpg'
     },
   ];
