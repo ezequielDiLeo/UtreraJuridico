@@ -239,4 +239,42 @@ export class HomeComponent implements AfterViewInit{
     })
   }
 
+  services = [
+    {
+      title: 'Divorcio',
+      description: 'Resolvé tu situación matrimonial con claridad y acompañamiento legal en cada paso. Prioridad: tus derechos y bienestar.',
+      image: 'divorcio.jpg'
+    },
+    {
+      title: 'Derecho Laboral',
+      description: 'Defendemos tus derechos como trabajador frente a despidos injustificados, reclamos salariales y condiciones laborales irregulares.',
+      image: 'laboral.jpeg'
+    },
+    {
+      title: 'Accidente de Trabajo',
+      description: 'Te asesoramos para obtener la indemnización que corresponde por lesiones laborales. Tu salud y tu futuro, primero.',
+      image: 'accLaboral.jpg'
+    },
+    {
+      title: 'Contrato de Alquiler',
+      description: 'Redactamos y analizamos contratos para proteger tus intereses, ya seas inquilino o propietario. Evitá conflictos legales innecesarios.',
+      image: 'contrato-alquiler.jpg'
+    },
+    {
+      title: 'Accidentes de Tránsito',
+      description: 'Si sufriste un siniestro, reclamamos la compensación que te corresponde. Actuamos rápido y con eficacia.',
+      image: 'acc-transito.jpg'
+    },
+    {
+      title: 'Daños y Perjuicios',
+      description: 'Asumimos tu defensa ante situaciones que afecten tu patrimonio, reputación o integridad. Reparación justa, respaldo completo.',
+      image: 'daños.jpg'
+    },
+    {
+      title: 'Sucesiones',
+      description: 'Acompañamos el proceso sucesorio con sensibilidad y eficiencia para asegurar el cumplimiento de tu legítima herencia.',
+      image: 'sucecion.jpg'
+    },
+  ];
+
 }

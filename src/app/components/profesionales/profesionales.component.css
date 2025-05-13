@@ -131,7 +131,7 @@ color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 55px 55px;
+    padding: 55px 30px;
 }
 
 .titulo-estrategy {
@@ -189,6 +189,7 @@ color: white;
     .cont-color {
         width: 100%;
         height: auto;
+        background-attachment: fixed;
     }
     .texto-descriptivo {
         padding: 20px 0;

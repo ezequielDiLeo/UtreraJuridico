@@ -25,7 +25,7 @@ export class MapaComponent implements OnInit {
     });
   }
 
-  center = signal<google.maps.LatLngLiteral>({lat: -34.586400, lng: -58.414132});
+  center = signal<google.maps.LatLngLiteral>({lat: -34.604081, lng: -58.386048});
   zoom = signal<number>(16);
   display: google.maps.LatLngLiteral | undefined;
 

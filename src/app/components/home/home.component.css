@@ -5,14 +5,6 @@
     padding: 0;
 }
 
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: inherit;
-    position: relative;
-    overflow-y: hidden;
-    overflow-x: hidden;
-}
-
 .main{
     display: grid;
     grid-template-columns: [full-start] minmax(100px, 1fr) [center-start] repeat(
@@ -186,6 +178,90 @@ p.paragraph{
     grid-column: 1 / -1;
 }
 
+/* SECTION SERVICIOS */
+
+.services-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 55px;
+  background-color: rgba(219, 217, 217, 0.3);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.3rem;
+}
+
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.service-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+/* Imagen de fondo */
+.card-image {
+  height: 250px;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.5s ease;
+  z-index: 1;
+}
+.service-card:hover .card-image {
+  transform: scale(1.1);
+}
+
+/* Superposición con el texto */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.9)
+  );
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  z-index: 2;
+}
+
+.card-overlay h3 {
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.card-overlay p {
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  line-height: 1.5;
+}
+
+/* Opcional: efecto hover */
+.service-card:hover .card-overlay {
+  background-color: rgba(0, 0, 0, 0.336);
+}
+
+
+
 /* ------- RESPONSIVE ------- */
 @media screen and (max-width: 900px) {
   html, body {
@@ -197,7 +273,6 @@ p.paragraph{
     padding: 0;
     display: flex;
     flex-direction: column;
-    width: 100%;
     overflow-x: hidden;
     box-sizing: border-box;
   }
@@ -207,7 +282,6 @@ p.paragraph{
     flex-direction: column;
     gap: 2rem;
     padding: 2rem 1rem;
-    width: 100%;
     box-sizing: border-box;
     min-height: 100dvh;
   }
