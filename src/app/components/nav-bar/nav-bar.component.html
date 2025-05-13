@@ -42,10 +42,10 @@
         </div>
 
         <ul>
-          @if(noHome()){ <li><a routerLink="/home" (click)="cerrarMenu()">Inicio</a></li> }
-          <li><a routerLink="/profesionales" (click)="cerrarMenu()">Equipo</a></li>
-          <li><a routerLink="/nosotros" (click)="cerrarMenu()">Nosotros</a></li>
-          <li><a routerLink="/contacto" (click)="cerrarMenu()">Contacto</a></li>
+          @if(noHome()){ <li><a routerLink="/home" routerLinkActive="active2" (click)="cerrarMenu()">Inicio</a></li> }
+          <li><a routerLink="/profesionales" routerLinkActive="active2" (click)="cerrarMenu()">Equipo</a></li>
+          <li><a routerLink="/nosotros" routerLinkActive="active2" (click)="cerrarMenu()">Nosotros</a></li>
+          <li><a routerLink="/contacto" routerLinkActive="active2" (click)="cerrarMenu()">Contacto</a></li>
         </ul>
       </nav>
 

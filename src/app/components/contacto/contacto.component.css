@@ -241,7 +241,7 @@ textarea {
   }
 
   ::ng-deep .ng-select.ng-select-single .ng-select-container {
-    height: 32px !important;
+    height: 45px !important;
     min-height: 32px !important;
     padding: 2px 8px !important;
     font-size: 14px;
@@ -323,5 +323,17 @@ textarea {
             order: 1;
             border-bottom: 1px solid black;
             margin: 0 30px;
+        }
+        .contenedor-inputs {
+          height: auto;
+        }
+        .contenedor-inputs input {
+          height: 45px;
+        }
+        .input-container {
+          height: auto;
+        }
+        .input-container input {
+          height: 45px;
         }
     }

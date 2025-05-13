@@ -128,18 +128,37 @@ export class HomeComponent implements AfterViewInit{
       width: 0,
       opacity: 0,
     });
-    gsap.from(this.document.querySelector('.info-1__visual img'), {
-      scrollTrigger: {
-        trigger: this.document.querySelector('.info-1__visual img'),
-        scrub: true,
-        toggleClass: 'active',
-        start: '-100% bottom',
+    ScrollTrigger.matchMedia({
+      "(max-width: 900px)": () => {
+        gsap.from(this.document.querySelector('.info-1__visual img'), {
+          scrollTrigger: {
+            trigger: this.document.querySelector('.info-1__visual img'),
+            scrub: true,
+            toggleClass: 'active',
+            start: 'top 70%',
+          },
+          duration: 1.5,
+          height: 0,
+          scale: 1.3,
+          opacity: 0.5,
+        });
       },
-      duration: 1.5,
-      height: 0,
-      scale: 1.3,
-      opacity: 0.5,
-    })
+
+      "(min-width: 901px)": () => {
+        gsap.from(this.document.querySelector('.info-1__visual img'), {
+          scrollTrigger: {
+            trigger: this.document.querySelector('.info-1__visual img'),
+            scrub: true,
+            toggleClass: 'active',
+            start: '-100% bottom',
+          },
+          duration: 1.5,
+          height: 0,
+          scale: 1.3,
+          opacity: 0.5,
+        });
+      }
+    });
     gsap.from(this.document.querySelector('.quote'), {
       scrollTrigger: {
         trigger: this.document.querySelector('.quote'),

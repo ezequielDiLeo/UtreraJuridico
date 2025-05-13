@@ -96,6 +96,12 @@ img{
     list-style: none;
     border-bottom: 0.3px solid rgb(181, 181, 181);
 }
+.active2{
+    text-decoration: none;
+    list-style: none;
+    color: rgb(146, 119, 68)!important;
+    font-weight: bolder;
+}
 a{
     text-decoration: none;
 }

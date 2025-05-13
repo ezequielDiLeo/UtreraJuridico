@@ -187,8 +187,12 @@
 @media screen and (max-width: 900px){
   .cont-info-wpp {
     width: auto;
+    height: auto;
     margin: 20px 10px 10px 20px;
   }
+    .chat-btn .icon {
+      display: none;
+    }
   .chat-btn .text {
     width: 100%;
     font-size: 0.8rem;
