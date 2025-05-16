@@ -249,27 +249,27 @@ export class HomeComponent implements AfterViewInit{
   services = [
     {
       title: 'Divorcio',
-      description: 'Resolvé tu situación matrimonial con claridad y acompañamiento legal en cada paso. Prioridad: tus derechos y bienestar.',
+      description: 'Resuelve tu situación matrimonial con claridad y acompañamiento legal en cada paso. Nuestra prioridad son tus derechos y tu bienestar.',
       image: 'divorcio.jpg'
     },
     {
-      title: 'Derecho Laboral',
-      description: 'Defendemos tus derechos como trabajador frente a despidos injustificados y justificados, reclamos salariales y condiciones laborales irregulares.',
+      title: 'Derecho laboral',
+      description: 'Defendemos tus derechos como trabajador frente a despidos, ya sean injustificados o justificados, reclamos salariales y condiciones laborales irregulares.',
       image: 'laboral.jpeg'
     },
     {
-      title: 'Accidente de Trabajo',
-      description: 'Te asesoramos para obtener la indemnización que corresponde por lesiones laborales. Tu salud y tu futuro, primero.',
+      title: 'Accidente de trabajo',
+      description: 'Te asesoramos para obtener la indemnización que te corresponde por lesiones laborales. Tu salud y tu futuro, primero.',
       image: 'accLaboral.jpg'
     },
     {
-      title: 'Contrato de Alquiler',
+      title: 'Contrato de alquiler',
       description: 'Redactamos y analizamos contratos para proteger tus intereses, ya seas inquilino o propietario. Evitá conflictos legales innecesarios.',
       image: 'contrato-alquiler.jpg'
     },
     {
-      title: 'Accidentes de Tránsito',
-      description: 'Si sufriste un siniestro, reclamamos la compensación que te corresponde. Actuamos rápido y con eficacia.',
+      title: 'Accidentes de tránsito',
+      description: 'Si sufriste un siniestro, reclamamos la compensación que te corresponde.  Actuamos con rapidez y eficacia.',
       image: 'acc-transito.jpg'
     },
     {
@@ -283,8 +283,8 @@ export class HomeComponent implements AfterViewInit{
       image: 'sucecion.jpg'
     },
     {
-      title: 'Derecho de Familia',
-      description: 'Acompañamos en procesos familiares, priorizando el diálogo y la protección de los vínculos. ALIMENTOS, DERECHO DE COMUNICACIÓN (régimen de visitas), responsabilidad parental.',
+      title: 'Derecho de familia',
+      description: 'Acompañamos los procesos familiares priorizando el diálogo y la protección de los vínculos. Alimentos, derecho de comunicación (régimen de visitas) y responsabilidad parental.',
       image: 'sucecion.jpg'
     },
   ];
