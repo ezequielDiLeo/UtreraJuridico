@@ -90,11 +90,11 @@ export class HomeComponent implements AfterViewInit{
       duration: 1.5,
       opacity: 0.2
     });
-    gsap.to(this.document.querySelector('.btn'), {
+    gsap.to(this.document.querySelector('.btn--start'), {
       scrollTrigger: {
-        trigger: this.document.querySelector('.btn'),
+        trigger: this.document.querySelector('.btn--start'),
         scrub: true,
-        start:'120% center',
+        start:'top 30%',
       },
       color: '#fff',
       duration: 1.5,

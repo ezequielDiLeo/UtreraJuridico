@@ -1,5 +1,6 @@
 html {
     scroll-behavior:smooth;
+    overflow: hidden;
   }
 .cont-global{
     width: 100%;
@@ -9,6 +10,7 @@ html {
 .cont-padding{
     height: 100%;
     padding: 50px;
+    overflow: hidden;
 }
 
 .cont-princ{
