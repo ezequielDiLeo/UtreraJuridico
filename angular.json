@@ -22,6 +22,7 @@
             "styles": [
               "src/assets/leaflet/leaflet.css",
               "src/assets/leaflet/fullscreen/Control.FullScreen.css",
+              "node_modules/aos/dist/aos.css",
               "src/styles.css"
             ],
             "scripts": []

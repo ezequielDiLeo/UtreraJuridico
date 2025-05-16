@@ -2,13 +2,13 @@
 <app-principal></app-principal>
 <wp-button></wp-button>
 <div class="main">
-    <section class="first-section" #firstSection>
-        <div class="info">
+    <section class="first-section" #firstSection data-aos="fade-up">
+        <div class="info" data-aos="fade-right" data-aos-delay="200">
             <h1 class="heading-1">Estudio Jurídico Utrera – Compromiso, Confianza y Experiencia</h1>
             <p class="paragraph">Brindamos asesoramiento legal integral con un enfoque personalizado. Nuestro compromiso es defender tus derechos con seriedad, ética y experiencia, construyendo relaciones basadas en la confianza y los resultados.</p>
-            <a href="https://wa.me/5491133780444?text=Hola, me gustaría obtener más información sobre sus servicios." class="btn btn--start" target="_blank">Comunicate con nosotros!</a>
+            <a href="https://wa.me/5491133780444?text=Hola, me gustaría obtener más información sobre sus servicios." class="btn btn--start" target="_blank" data-aos="zoom-in" data-aos-delay="400">Comunicate con nosotros!</a>
         </div>
-        <div class="visuals">
+        <div class="visuals" data-aos="fade-left" data-aos-delay="300">
             <div class="image-container">
                 <img #imageFirst src="lawyer.jpg" alt="imagen1" loading="lazy">
             </div>
@@ -17,12 +17,12 @@
             </div>
         </div>
     </section>
-    <section class="second-section" #secondSection>
+    <section class="second-section" #secondSection data-aos="fade-up" data-aos-delay="400">
         <div class="box"></div>
         <h4 class="heading-4" id="about">Nosotros</h4>
         <h1 class="heading-1" id="contract">Defendiendo tus derechos con Compromiso, protegiendo tu futuro con Experiencia</h1>
         <div class="info-1">
-            <div class="info-1__text">
+            <div class="info-1__text" data-aos="fade-right">
                 <span class="quote">
                     "
                 </span>
@@ -46,7 +46,7 @@
       <h2>Áreas de Práctica</h2>
     </div>
     <div class="cards-container">
-      <div class="service-card" *ngFor="let service of services">
+      <div class="service-card" *ngFor="let service of services" data-aos="fade-up" data-aos-delay="300">
         <div class="card-image" [ngStyle]="{ 'background-image': 'url(' + service.image + ')' }"></div>
         <div class="card-overlay">
             <h3>{{ service.title }}</h3>

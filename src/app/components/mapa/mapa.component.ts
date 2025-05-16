@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit, signal } from '@angular/core';
+import { AfterViewInit, Component, inject, OnInit, signal } from '@angular/core';
 import {GoogleMap, MapAdvancedMarker} from '@angular/google-maps';
 import { LocationService } from '../../services/mapa';
 import { AppLocations } from '../../interface/Locations';
@@ -11,13 +11,29 @@ import { AppLocations } from '../../interface/Locations';
   templateUrl: './mapa.component.html',
   styleUrl: './mapa.component.css'
 })
-export class MapaComponent implements OnInit {
+export class MapaComponent implements OnInit, AfterViewInit {
+
+  // VARIABLES
+  mapVisible = false;
 
   // INJECTS
   private _locationService = inject(LocationService)
 
   //SIGNALS
   locations = signal<AppLocations[]>([])
+
+
+ngAfterViewInit() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        this.mapVisible = true;
+        observer.disconnect();
+      }
+    });
+  });
+  observer.observe(document.querySelector('#map')!);
+}
 
   ngOnInit() {
     this._locationService.getAllLocations().subscribe(data => {

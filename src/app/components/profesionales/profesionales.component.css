@@ -1,6 +1,7 @@
 html {
     scroll-behavior:smooth;
   }
+
 .cont-global{
     width: 100%;
     height: auto;
@@ -93,7 +94,7 @@ html {
 .cont-color {
     width: 100%;
     height: 250px;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.658)), url(../../../../public/edificio.jpg);
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.658)), url(../../../../public/edificio.webp);
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
@@ -102,6 +103,7 @@ html {
     justify-content: center;
     align-items: center;
 }
+
 
 .texto-descriptivo{
 width: 80%;
@@ -161,18 +163,19 @@ color: white;
 
 .tracking-in-expand-forward-top {
     animation:tracking-in-expand-forward-top 0.9s linear both
-} @keyframes tracking-in-expand-forward-top{
-    0%{
-        letter-spacing:-.2em;
-        transform:translateZ(-700px) translateY(-100px);
-        opacity:0}
-    40%{
-        opacity:.6
-    }
-    100%{
-        transform:translateZ(0) translateY(0);
-        opacity:1
-    }}
+} @keyframes fade-up {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.profesionales {
+  animation: fade-up 0.8s ease-out;
+}
 
 @media screen and (max-width: 900px) {
     .cont-imagenes {
@@ -194,4 +197,5 @@ color: white;
     .texto-descriptivo {
         padding: 20px 0;
     }
+
 }

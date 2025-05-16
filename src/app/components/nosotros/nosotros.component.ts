@@ -4,10 +4,13 @@ import { NavBarComponent } from "../nav-bar/nav-bar.component";
 import { isPlatformBrowser } from '@angular/common';
 import { WpButtonComponent } from "../wp-button/wp-button.component";
 import { CaratulaFootComponent } from "../caratula-foot/caratula-foot.component";
+// @ts-ignore
+import * as AOS from 'aos';
+
 
 @Component({
   selector: 'app-nosotros',
-  imports: [FooterComponent, NavBarComponent, WpButtonComponent, CaratulaFootComponent],
+  imports: [FooterComponent, NavBarComponent, WpButtonComponent, CaratulaFootComponent,],
   templateUrl: './nosotros.component.html',
   styleUrl: './nosotros.component.css'
 })
@@ -19,6 +22,11 @@ export class NosotrosComponent {
     if (isPlatformBrowser(this.platformId)) {
       window.scrollTo(0, 0);
     }
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+    });
   }
 
 }

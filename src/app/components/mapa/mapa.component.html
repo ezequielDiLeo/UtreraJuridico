@@ -1,20 +1,22 @@
 
 <div id="map" style="height: 400px; width: 100%; border-radius: 12px;">
-  <google-map
-    mapId="e1e848af4c89b1a1"
-    height="100%"
-    width="100%"
-    [center]="center()"
-    [zoom]="zoom()"
-    >
-    @for (loc of locations(); track $index) {
-      <map-advanced-marker
-      [position]="{ lat: loc.lat, lng: loc.lng }"
-      [title]="loc.name"
+  @if(mapVisible){
+    <google-map
+      mapId="e1e848af4c89b1a1"
+      height="100%"
+      width="100%"
+      [center]="center()"
+      [zoom]="zoom()"
       >
+      @for (loc of locations(); track $index) {
+        <map-advanced-marker
+        [position]="{ lat: loc.lat, lng: loc.lng }"
+        [title]="loc.name"
+        >
       </map-advanced-marker>
     }
-    </google-map>
+  </google-map>
+}
 
 </div>
 

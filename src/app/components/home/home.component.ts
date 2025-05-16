@@ -7,6 +7,8 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { FooterComponent } from "../footer/footer.component";
 import { PrincipalComponent } from "../principal/principal.component";
 import { WpButtonComponent } from "../wp-button/wp-button.component";
+// @ts-ignore
+import * as AOS from 'aos';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -32,6 +34,11 @@ export class HomeComponent implements AfterViewInit{
     if (isPlatformBrowser(this.platformId)) {
       window.scrollTo(0, 0);
     }
+    AOS.init({
+      duration: 800,
+      easing: 'ease-in-out',
+      once: true,
+    });
   }
 
   ngAfterViewInit(): void {
