@@ -176,89 +176,92 @@ p.paragraph{
     font-weight: bolder;
     grid-row: 4 / -1;
     grid-column: 1 / -1;
+    opacity: 1 !important;
+    position: relative !important;
 }
 
-/* SECTION SERVICIOS */
+/* SECTION SERVICIOS - ESTILO MINIMALISTA */
 
 .services-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 55px;
+  padding: 60px 30px;
   background-color: rgba(219, 217, 217, 0.3);
 }
 
 .section-header {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.3rem;
+  margin-bottom: 2.5rem;
 }
 
+.section-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0;
+}
+
+/* GRID DE CARDS */
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
 }
 
+/* CARD */
 .service-card {
-  position: relative;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
   overflow: hidden;
-  border-radius: 10px;
-  background-color: white;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
 }
 
-/* Imagen de fondo */
+.service-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  transform: translateY(-4px);
+}
+
+/* IMAGEN */
 .card-image {
-  height: 250px;
+  position: relative;
+  height: 200px;
   background-size: cover;
   background-position: center;
-  transition: transform 0.5s ease;
-  z-index: 1;
-}
-.service-card:hover .card-image {
-  transform: scale(1.1);
+  overflow: hidden;
+  transition: all ease 1s;
 }
 
-/* Superposición con el texto */
-.card-overlay {
+.card-image::after {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.675),
-    rgba(0, 0, 0, 0.9)
-  );
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.904) 100%);
+  pointer-events: none; /* para que no bloquee interacciones */
+}
+
+.card-image:hover{
+  transform: scale(1.03);
+}
+
+/* TEXTO */
+.card-overlay {
   padding: 1.5rem;
   text-align: center;
-  transition: background-color 0.3s ease;
-  z-index: 2;
+  background-color: #fff;
+  color: #333;
 }
 
 .card-overlay h3 {
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-  margin-bottom: 0.5rem;
-  font-weight: bold;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 0.8rem;
 }
 
 .card-overlay p {
-  font-size: clamp(0.9rem, 2vw, 1.1rem);
-  line-height: 1.5;
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
 }
 
-/* Opcional: efecto hover */
-.service-card:hover .card-overlay {
-  background-color: rgba(0, 0, 0, 0.336);
-}
 
 
 

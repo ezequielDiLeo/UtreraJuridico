@@ -46,7 +46,7 @@
       <h2>Áreas de práctica</h2>
     </div>
     <div class="cards-container">
-      <div class="service-card" *ngFor="let service of services" data-aos="fade-up" data-aos-delay="300">
+      <div class="service-card" *ngFor="let service of services"  data-aos="fade-right" data-aos-delay="200">
         <div class="card-image" [ngStyle]="{ 'background-image': 'url(' + service.image + ')' }"></div>
         <div class="card-overlay">
             <h3>{{ service.title }}</h3>
