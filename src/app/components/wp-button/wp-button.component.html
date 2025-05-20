@@ -16,8 +16,23 @@
                 </div>
             </div>
             <div class="cont-info-wpp">
-                <p>Hola!👋</p>
-                <p>Comunícate con nosotros!</p>
+                <div class="chat-window" #chatContainer>
+                  <div *ngFor="let msg of chatHistory" [ngClass]="msg.sender">
+                    <p>{{ msg.text }}</p>
+                  </div>
+                </div>
+                <div class="quick-answers" *ngIf="!userReplied">
+                  <div class="chat-option" (click)="sendMessage('turno')">Horarios de atención</div>
+                  <div class="chat-option" (click)="sendMessage('consultas')">Hacer una consulta</div>
+                  <div class="chat-option" (click)="sendMessage('abogados')">Conocer al equipo</div>
+                  <div class="chat-option" (click)="sendMessage('honorarios')">¿Cuáles son los honorarios de consulta?</div>
+                  <div class="chat-option" (click)="sendMessage('atencion')">¿Brindan atención online o presencial?</div>
+                </div>
+
+                <div class="cont-info" *ngIf="userReplied">
+                  <p>{{ chatAnswer }}</p>
+                  <button class="btn-volver" (click)="backToOptions()">Volver</button>
+                </div>
             </div>
             <div class="cont-btns">
                 <a href="https://wa.me/5491133780444?text=Hola%2C%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios." target="_blank" class="btn btn-success chat-btn">
