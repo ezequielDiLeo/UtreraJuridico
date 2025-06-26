@@ -21,7 +21,7 @@ export class ProfesionalesComponent implements OnInit{
       window.scrollTo(0, 0);
     }
         AOS.init({
-          duration: 800,
+          duration: 600,
           easing: 'ease-in-out',
           once: true,
         });

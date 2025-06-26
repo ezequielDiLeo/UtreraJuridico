@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router, RouterOutlet } from '@angular/router';
-import { WpButtonComponent } from "./components/wp-button/wp-button.component";
 import { Title } from '@angular/platform-browser';
 import { filter, map } from 'rxjs/operators';
+import { SeoService } from './services/seo.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +12,7 @@ import { filter, map } from 'rxjs/operators';
 })
 export class AppComponent implements OnInit {
 
-  constructor(private titleService: Title, private router: Router, private activatedRoute: ActivatedRoute) {}
+  constructor(private titleService: Title, private router: Router, private activatedRoute: ActivatedRoute, private seoService: SeoService) {}
 
   ngOnInit() {
     this.router.events.pipe(
