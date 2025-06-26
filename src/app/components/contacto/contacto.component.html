@@ -51,14 +51,14 @@
             <form class="formulario" [formGroup]="contactForm" (ngSubmit)="sendMessage()">
                 <div class="cont-inputs-1">
                     <div class="contenedor-inputs">
-                        <input id="name" formControlName="name" type="text" placeholder="Nombre">
+                        <input inputmode="text" id="name" formControlName="name" type="text" placeholder="Nombre">
                         <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched">
                             <small style="color: red;">El nombre es requerido y debe tener al menos 3 caracteres.</small>
                         </div>
                     </div>
 
                     <div class="contenedor-inputs">
-                        <input id="lastName" formControlName="lastName" type="text" placeholder="Apellido">
+                        <input inputmode="text" id="lastName" formControlName="lastName" type="text" placeholder="Apellido">
                         <div style="display: flex; justify-content: center; align-items: center;" *ngIf="contactForm.get('lastName')?.invalid && contactForm.get('lastName')?.touched">
                             <small style="color: red;">El apellido es requerido y debe tener al menos 3 caracteres.</small>
                         </div>
@@ -67,7 +67,7 @@
 
                 <div class="cont-inputs-1">
                     <div class="contenedor-inputs">
-                        <input id="email" formControlName="email" type="email" placeholder="Email">
+                        <input inputmode="email" id="email" formControlName="email" type="email" placeholder="Email">
                         <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched">
                             <small style="color: red;">Ingrese un email válido. Asegurese que cumpla los requisitos <span style="color: grey;">example: mail&#64;gmail.com</span> </small>
                         </div>
@@ -102,7 +102,7 @@
                 </div>
 
                 <div class="input-container full-width">
-                    <input id="phone" formControlName="phone" type="text" placeholder="Teléfono" />
+                    <input inputmode="tel" id="phone" formControlName="phone" type="text" placeholder="Teléfono" />
                     <div *ngIf="contactForm.get('phone')?.invalid && contactForm.get('phone')?.touched">
                       <small style="color: red;">Ingrese un número válido.</small>
                     </div>
