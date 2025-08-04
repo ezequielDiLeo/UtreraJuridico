@@ -24,7 +24,8 @@ export class NosotrosComponent {
     }
     AOS.init({
       duration: 500,
-      easing: 'ease-in-out',
+      easing: 'ease-out',
+      offset: 100,
       once: false,
     });
   }
