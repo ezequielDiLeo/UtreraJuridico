@@ -23,10 +23,10 @@ export class NosotrosComponent {
       window.scrollTo(0, 0);
     }
     AOS.init({
-      duration: 500,
+      duration: 700,
       easing: 'ease-out',
       offset: 100,
-      once: false,
+      once: true,
     });
   }
 

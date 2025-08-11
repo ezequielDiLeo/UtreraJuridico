@@ -136,7 +136,7 @@ img{
     grid-row-gap: 2 / 3;
     grid-column: 1 / 4;
     justify-self: center;
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 600;
 }
 
@@ -216,8 +216,7 @@ p.paragraph{
 }
 
 .service-card:hover {
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.151);
 }
 
 /* IMAGEN */
@@ -235,7 +234,7 @@ p.paragraph{
   position: absolute;
   inset: 0;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.904) 100%);
-  pointer-events: none; /* para que no bloquee interacciones */
+  pointer-events: none;
 }
 
 .card-image:hover{

@@ -285,7 +285,7 @@ export class HomeComponent implements AfterViewInit{
     {
       title: 'Derecho de familia',
       description: 'Acompañamos los procesos familiares priorizando el diálogo y la protección de los vínculos. Alimentos, derecho de comunicación (régimen de visitas) y responsabilidad parental.',
-      image: 'sucecion.jpg'
+      image: 'family.jpeg'
     },
   ];
 

@@ -9,7 +9,7 @@ html {
 
 .cont-padding{
     height: 100%;
-    padding: 50px;
+    padding: clamp(20px, 5vw, 50px);
     overflow: hidden;
 }
 
