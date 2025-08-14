@@ -41,8 +41,8 @@ ngAfterViewInit() {
     });
   }
 
-  center = signal<google.maps.LatLngLiteral>({lat: -34.604081, lng: -58.386048});
-  zoom = signal<number>(16);
+  center = signal<google.maps.LatLngLiteral>({lat: -34.603957, lng: -58.386510});
+  zoom = signal<number>(17);
   display: google.maps.LatLngLiteral | undefined;
 
   moveMap(event: google.maps.MapMouseEvent) {

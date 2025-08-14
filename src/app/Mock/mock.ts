@@ -4,8 +4,8 @@ export const mockLocations: AppLocations[] = [
   {
     id: 1,
     name: 'Tribunales',
-    lat: -34.604081,
-    lng:  -58.386048
+    lat: -34.603857,
+    lng: -58.386480
   },
   {
     id: 2,
